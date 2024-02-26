@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="mb-4 text-center">URL Shortener</h2>
+      <form id="urlForm">
+        <div class="form-group">
+          <label for="urlInput">Enter URL:</label>
+          <input type="text" class="form-control" id="urlInput" placeholder="Enter URL" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Shorten URL</button>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-4 justify-content-center" id="shortURLContainer" style="display: none;">
+    <div class="col-md-6">
+      <label>Shortened URL:</label>
+      <button type="button" class="btn btn-success lbtn" id="shortURLButton"></button>
+    </div>
+  </div>
+
+  <table id="urlTable" class="table table-striped mt-5">
+    <thead>
+    <tr>
+      <th>Short URL</th>
+      <th>Long URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Table rows will be dynamically added here -->
+    </tbody>
+  </table>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="shorten.js"></script>
+
+</body>
+</html>

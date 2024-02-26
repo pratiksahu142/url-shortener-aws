@@ -1,0 +1,23 @@
+{
+  "TableName": "URL-Shortener",
+  "ConditionExpression": "attribute_not_exists(id)",
+  "Key": {
+    "shortId": {
+      "S": $input.json('$.shortURL')
+    }
+  },
+  "ExpressionAttributeNames": {
+    "#u": "longURL",
+    "#o": "owner"
+  },
+  "ExpressionAttributeValues": {
+    ":u": {
+      "S": $input.json('$.longURL')
+    },
+    ":o": {
+      "S":  $input.json('$.owner')
+    }
+  },
+  "UpdateExpression": "SET #u = :u, #o = :o",
+  "ReturnValues": "ALL_NEW"
+}
